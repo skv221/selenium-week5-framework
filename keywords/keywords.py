@@ -11,3 +11,6 @@ def navigateTo(driver, url):
     
 def killBrowser(driver):
     driver.quit()
+    
+def xstr(s):
+    return '' if s is None else str(s)
