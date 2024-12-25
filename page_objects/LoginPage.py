@@ -16,6 +16,6 @@ class LoginPage(BasePage):
         
     def validatelogin(self):
         if self.isElementPresent(self.successElement):
-            return True
+            return "Pass"
         elif self.isElementPresent(self.errorElement):
-            return False
+            return "Fail"
