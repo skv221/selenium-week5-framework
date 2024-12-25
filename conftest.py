@@ -1,14 +1,15 @@
 from keywords.keywords import openBrowser, navigateTo, killBrowser
+from utilities.data_reader import read_json, read_excel
 import pytest
-import json
 import time
 
-with open('D:\Selenium Practices\Week 5\config\config.json', 'r') as file:
-    config = json.load(file)
+config = read_json("D:\Selenium Practices\Week 5\config\config.json")
 
 browserType = config["browser"]["type"]
 driverPath = config["driver_paths"]["chrome_driver"]
 testURL = config["environment"]["base_url"]
+testDataPath = config["test_data"]["file_path"]
+columnsRequired = config["test_data"]["columns_required"]
 
 @pytest.fixture
 def setup_browser():
@@ -18,3 +19,7 @@ def setup_browser():
     yield driver
     time.sleep(5)
     killBrowser(driver)
+    
+@pytest.fixture
+def testData():
+    return read_excel(testDataPath, columnsRequired)
