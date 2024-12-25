@@ -56,7 +56,7 @@ This repository contains my work for Week 5 of the Python Selenium Learning Jour
 1. **Clone the Repository**:
    ```bash
    git clone <repository-link>
-   cd selenium-week5-hybrid-framework
+   cd selenium-week5-framework
    ```
 
 2. **Install Dependencies**:
