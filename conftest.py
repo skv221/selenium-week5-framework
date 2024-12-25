@@ -8,6 +8,7 @@ config = read_json("D:\Selenium Practices\Week 5\config\config.json")
 browserType = config["browser"]["type"]
 driverPath = config["driver_paths"]["chrome_driver"]
 testURL = config["environment"]["base_url"]
+
 testDataPath = config["test_data"]["file_path"]
 columnsRequired = config["test_data"]["columns_required"]
 
