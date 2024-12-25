@@ -1,5 +1,6 @@
 from keywords.keywords import openBrowser, navigateTo, killBrowser
 from utilities.data_reader import read_json, read_excel
+from utilities.logger import logger
 import pytest
 import time
 
@@ -11,6 +12,8 @@ testURL = config["environment"]["base_url"]
 
 testDataPath = config["test_data"]["file_path"]
 columnsRequired = config["test_data"]["columns_required"]
+
+reportDir = config["reporting"]["report_path"]
 
 @pytest.fixture
 def setup_browser():
@@ -24,3 +27,7 @@ def setup_browser():
 @pytest.fixture
 def testData():
     return read_excel(testDataPath, columnsRequired)
+
+@pytest.fixture(scope="function")
+def log():
+    return logger(reportDir)

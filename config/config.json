@@ -15,6 +15,9 @@
     },
     "environment": {
       "base_url": "https://www.saucedemo.com/"
-    }
+    },
+    "reporting": {
+        "report_path": "D:\\Selenium Practices\\Week 5\\reports\\test_execution.log"
+      }
   }
   
