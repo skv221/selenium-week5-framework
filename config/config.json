@@ -1,0 +1,19 @@
+{
+    "browser": {
+      "type": "chrome",
+      "implicit_wait": 10,
+      "page_load_timeout": 30
+    },
+    "driver_paths": {
+      "chrome_driver": "D:\\Selenium Practices\\chromedriver-win64\\chromedriver.exe"
+    },
+    "test_data": {
+      "data_source": "excel",
+      "file_path": "D:\\Selenium Practices\\Week 5\test_data\\Test Data.xlsx",
+      "sheet_name": "TestCases"
+    },
+    "environment": {
+      "base_url": "https://www.saucedemo.com/"
+    }
+  }
+  
