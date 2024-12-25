@@ -10,23 +10,16 @@ browserType = config["browser"]["type"]
 driverPath = config["driver_paths"]["chrome_driver"]
 testURL = config["environment"]["base_url"]
 
-testDataPath = config["test_data"]["file_path"]
-columnsRequired = config["test_data"]["columns_required"]
-
 reportDir = config["reporting"]["report_path"]
 
 @pytest.fixture
 def setup_browser():
     driver = openBrowser(browserType, driverPath)
     driver.maximize_window()
-    navigateTo(testURL)
+    navigateTo(driver, testURL)
     yield driver
     time.sleep(5)
     killBrowser(driver)
-    
-@pytest.fixture
-def testData():
-    return read_excel(testDataPath, columnsRequired)
 
 @pytest.fixture(scope="function")
 def log():

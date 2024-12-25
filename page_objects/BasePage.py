@@ -9,18 +9,18 @@ class BasePage:
         
     def sendText(self, locator, text):
         WebDriverWait(self.driver, 30).until(
-            EC.presence_of_element_located(*locator)
+            EC.presence_of_element_located(locator)
         ).send_keys(text)
     
     def clickElement(self, locator):
         WebDriverWait(self.driver, 30).until(
-            EC.element_to_be_clickable(*locator)
+            EC.element_to_be_clickable(locator)
         ).click()
     
     def isElementPresent(self, locator):
         try:
             elementToBeChecked = WebDriverWait(self.driver, 30).until(
-                EC.presence_of_element_located(*locator)
+                EC.presence_of_element_located(locator)
             )
             return bool(elementToBeChecked)
         except:
@@ -28,5 +28,5 @@ class BasePage:
     
     def getElementText(self, locator):
         return WebDriverWait(self.driver, 30).until(
-            EC.presence_of_element_located(*locator)
+            EC.presence_of_element_located(locator)
         ).text

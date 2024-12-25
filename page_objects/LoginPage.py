@@ -12,10 +12,12 @@ class LoginPage(BasePage):
         self.sendText(self.userNameField, userName)
         self.sendText(self.passwordField, password)
         self.clickElement(self.loginButton)
-        self.validatelogin(self)
         
     def validatelogin(self):
         if self.isElementPresent(self.successElement):
             return "Pass"
         elif self.isElementPresent(self.errorElement):
             return "Fail"
+    
+    def getErrorText(self):
+        return self.getElementText(self.errorElement)
