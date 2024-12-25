@@ -14,7 +14,7 @@ def testData():
 @pytest.mark.parametrize("tc_id, name, password, expected", testData())
 #Function for sending test data to the form
 def test_submit(setup_browser, log, tc_id, name, password, expected):
-    log.info("Executing "+ tc_id + " with " + name + " as username and " + password + " as password..." )
+    log.info("Executing "+ tc_id + " with " + xstr(name) + " as username and " + xstr(password) + " as password..." )
     driver = setup_browser
     log.info("Starting browser session...")
     loginPage = LoginPage(driver)
