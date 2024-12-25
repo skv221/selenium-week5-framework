@@ -10,6 +10,7 @@
     "test_data": {
       "data_source": "excel",
       "file_path": "D:\\Selenium Practices\\Week 5\test_data\\Test Data.xlsx",
+      "columns_required": 3,
       "sheet_name": "TestCases"
     },
     "environment": {
