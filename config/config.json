@@ -1,8 +1,7 @@
 {
     "browser": {
       "type": "chrome",
-      "implicit_wait": 10,
-      "page_load_timeout": 30
+      "implicit_wait": 10
     },
     "driver_paths": {
       "chrome_driver": "D:/Selenium Practices/chromedriver-win64/chromedriver.exe"

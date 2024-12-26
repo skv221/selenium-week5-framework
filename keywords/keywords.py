@@ -6,8 +6,10 @@ def openBrowser(browserType, driverPath):
     elif browserType == 'firefox':
         return webdriver.Firefox(driverPath)
 
-def navigateTo(driver, url):
+def navigateTo(driver, url, waitTime):
+    driver.maximize_window()
     driver.get(url)
+    driver.implicitly_wait(waitTime)
     
 def killBrowser(driver):
     driver.quit()
