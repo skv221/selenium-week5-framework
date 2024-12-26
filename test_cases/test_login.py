@@ -8,10 +8,10 @@ config = read_json("D:\Selenium Practices\Week 5\config\config.json")
 testDataPath = config["test_data"]["file_path"]
 columnsRequired = config["test_data"]["columns_required"]
 
-def testData():
+def getTestData():
     return read_excel(testDataPath, columnsRequired)
     
-@pytest.mark.parametrize("tc_id, name, password, expected", testData())
+@pytest.mark.parametrize("tc_id, name, password, expected", getTestData())
 #Function for sending test data to the form
 def test_submit(setup_browser, log, tc_id, name, password, expected):
     log.info("Executing "+ tc_id + " with " + xstr(name) + " as username and " + xstr(password) + " as password..." )
